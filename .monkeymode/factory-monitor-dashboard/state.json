@@ -26,7 +26,7 @@
   "stories": {
     "story-1-status-alert-utilities": {
       "title": "Shared Status & Alert Normalization Utilities",
-      "status": "code_spec",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-1-status-alert-utilities-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -38,7 +38,7 @@
     },
     "story-2-all-machines-hook": {
       "title": "All-Machines Aggregation Hook",
-      "status": "code_spec",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-2-all-machines-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -50,7 +50,7 @@
     },
     "story-3-live-data-provider": {
       "title": "Live Data Provider",
-      "status": "code_spec",
+      "status": "implementation",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-3-live-data-provider-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -62,7 +62,7 @@
     },
     "story-4-active-alerts-hook": {
       "title": "Active Alerts Aggregation Hook",
-      "status": "code_spec",
+      "status": "implementation",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-4-active-alerts-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -110,9 +110,21 @@
     }
   },
   "parallel_execution": {
-    "enabled": false,
+    "enabled": true,
     "max_concurrent": 10,
-    "batches": [],
+    "batches": [
+      {
+        "batch_number": 1,
+        "stories": ["story-1-status-alert-utilities", "story-2-all-machines-hook"],
+        "status": "completed",
+        "started_at": "2026-09-23T19:00:00Z",
+        "completed_at": "2026-09-23T19:10:00Z",
+        "results": {
+          "story-1-status-alert-utilities": "implementation_complete",
+          "story-2-all-machines-hook": "implementation_complete"
+        }
+      }
+    ],
     "current_batch": null
   },
   "rework_history": [],
