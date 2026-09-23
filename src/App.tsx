@@ -5,6 +5,7 @@ import { Box, Flex, Heading, HStack, Button } from "@chakra-ui/react";
 import { Dashboard } from "./pages/Dashboard";
 import { Alerts } from "./pages/Alerts";
 import { Topology } from "./pages/Topology";
+import { LiveProvider } from "./live/LiveProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,18 +41,20 @@ function App() {
   return (
     <ChakraProvider>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <Box minH="100vh" bg="gray.50">
-            <NavBar />
-            <Box as="main">
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/alerts" element={<Alerts />} />
-                <Route path="/topology" element={<Topology />} />
-              </Routes>
+        <LiveProvider>
+          <BrowserRouter>
+            <Box minH="100vh" bg="gray.50">
+              <NavBar />
+              <Box as="main">
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/alerts" element={<Alerts />} />
+                  <Route path="/topology" element={<Topology />} />
+                </Routes>
+              </Box>
             </Box>
-          </Box>
-        </BrowserRouter>
+          </BrowserRouter>
+        </LiveProvider>
       </QueryClientProvider>
     </ChakraProvider>
   );

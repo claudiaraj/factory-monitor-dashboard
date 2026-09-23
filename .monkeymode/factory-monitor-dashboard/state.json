@@ -50,7 +50,7 @@
     },
     "story-3-live-data-provider": {
       "title": "Live Data Provider",
-      "status": "implementation",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-3-live-data-provider-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -62,7 +62,7 @@
     },
     "story-4-active-alerts-hook": {
       "title": "Active Alerts Aggregation Hook",
-      "status": "implementation",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-4-active-alerts-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -74,7 +74,7 @@
     },
     "story-5-dashboard-page": {
       "title": "Dashboard Page & Components",
-      "status": "code_spec",
+      "status": "implementation",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-5-dashboard-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -86,7 +86,7 @@
     },
     "story-6-alerts-page": {
       "title": "Alerts Page & Components (built for high alert volume)",
-      "status": "code_spec",
+      "status": "implementation",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-6-alerts-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -98,7 +98,7 @@
     },
     "story-7-topology-page": {
       "title": "Factory Topology Page (stretch)",
-      "status": "code_spec",
+      "status": "implementation",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-7-topology-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -122,6 +122,17 @@
         "results": {
           "story-1-status-alert-utilities": "implementation_complete",
           "story-2-all-machines-hook": "implementation_complete"
+        }
+      },
+      {
+        "batch_number": 2,
+        "stories": ["story-3-live-data-provider", "story-4-active-alerts-hook"],
+        "status": "completed",
+        "started_at": "2026-09-23T19:15:00Z",
+        "completed_at": "2026-09-23T19:32:00Z",
+        "results": {
+          "story-3-live-data-provider": "implementation_complete",
+          "story-4-active-alerts-hook": "implementation_complete"
         }
       }
     ],
