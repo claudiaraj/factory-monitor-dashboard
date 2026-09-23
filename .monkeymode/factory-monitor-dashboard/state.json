@@ -1,6 +1,6 @@
 {
   "feature_name": "factory-monitor-dashboard",
-  "current_phase": "5",
+  "current_phase": "6",
   "phase_status": {
     "design_1a": "completed",
     "design_1b": "completed",
@@ -10,7 +10,7 @@
     "code_spec": "completed",
     "implementation": "completed",
     "verification": "completed",
-    "integration": "not_started",
+    "integration": "completed",
     "acceptance": "not_started"
   },
   "artifacts": {
@@ -26,7 +26,7 @@
   "stories": {
     "story-1-status-alert-utilities": {
       "title": "Shared Status & Alert Normalization Utilities",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-1-status-alert-utilities-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -48,7 +48,7 @@
     },
     "story-2-all-machines-hook": {
       "title": "All-Machines Aggregation Hook",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-2-all-machines-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -69,7 +69,7 @@
     },
     "story-3-live-data-provider": {
       "title": "Live Data Provider",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-3-live-data-provider-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -93,7 +93,7 @@
     },
     "story-4-active-alerts-hook": {
       "title": "Active Alerts Aggregation Hook",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-4-active-alerts-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -114,7 +114,7 @@
     },
     "story-5-dashboard-page": {
       "title": "Dashboard Page & Components",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-5-dashboard-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -139,7 +139,7 @@
     },
     "story-6-alerts-page": {
       "title": "Alerts Page & Components (built for high alert volume)",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-6-alerts-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -165,7 +165,7 @@
     },
     "story-7-topology-page": {
       "title": "Factory Topology Page (stretch)",
-      "status": "verified",
+      "status": "integrated",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-7-topology-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -238,10 +238,13 @@
   },
   "rework_history": [],
   "integration": {
-    "status": "not_started",
-    "shared_files_merged": [],
+    "status": "completed",
+    "shared_files_merged": [
+      "src/App.tsx"
+    ],
     "integration_tests_added": 0,
-    "completed_at": null
+    "notes": "Only one shared file (src/App.tsx), modified by a single story (Story 3) \u2014 no merge required. All cross-story imports (Stories 4,5,6,7 -> Stories 1,2,3) confirmed resolving via a clean full-project tsc -b build. No integration tests added (no test runner in repo); cross-story flows were already exercised end-to-end during Phase 5's live Playwright pass (AC-009, AC-018, AC-019, AC-020 specifically cross story boundaries).",
+    "completed_at": "2026-09-23T20:45:00Z"
   },
   "acceptance": {
     "status": "not_started",
@@ -260,5 +263,5 @@
       "note": "Handed off from @monkeyplan. PRT + epic breakdown are pre-approved; Phase 1 design and Phase 2 stories should build on them, not re-derive requirements from scratch."
     }
   },
-  "last_updated": "2026-09-23T20:35:00Z"
+  "last_updated": "2026-09-23T20:45:00Z"
 }
