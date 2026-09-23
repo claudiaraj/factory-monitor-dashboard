@@ -46,7 +46,7 @@ function App() {
     <ChakraProvider>
       <QueryClientProvider client={queryClient}>
         <LiveProvider>
-          <BrowserRouter>
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Box minH="100vh" bg="gray.50">
               <NavBar />
               <Box as="main">
