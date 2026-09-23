@@ -253,9 +253,9 @@
     "human_passed": 0,
     "human_failed": 0,
     "known_issues": [
-      "zones.json machineCount (4) for Painting & Coating doesn't match the 3 machines actually in machines.json for that zone -- Dashboard (trusts zones.json per PRT Q1) and Topology (counts real machines) show different numbers for the same zone",
-      "formatRelativeTime (src/lib/alerts.ts) has no day/week granularity -- caps out at 'Nh ago', cosmetic only",
-      "Scenario switches (window.__setAlertScenario) don't survive a hard browser reload (F5) -- expected, matches the mock's documented no-persistence-across-reload limitation (PRT Q2)"
+      "RESOLVED (bugs/panel-polish): zones.json says Painting & Coating has 4 machines but only 3 exist. Dashboard zone cards now count real machines via useAllMachines (falling back to zone.machineCount while loading), so Dashboard and Topology agree.",
+      "RESOLVED (bugs/panel-polish): formatRelativeTime now rolls over to days and shows an absolute date past 7 days (the 2025 fixtures previously rendered as ~8950h ago).",
+      "By design, not a bug: window.__setAlertScenario(...) doesn't survive a hard reload (F5) -- matches the mock's documented no-persistence-on-reload behavior (PRT Q2). useAlerts now polls every 15s, so a scenario switch shows up without a manual refresh."
     ],
     "note": "All 20 items of stories/2b-acceptance.md (AC-001 through AC-020) were run live via Playwright against npm run dev in Phase 5 on 2026-09-23T20:35:00Z, with 20/20 PASS. User confirmed reusing that run as the Phase 7 acceptance result rather than re-running, since nothing in src/ changed afterward.",
     "completed_at": "2026-09-23T20:55:00Z"

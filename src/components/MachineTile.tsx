@@ -24,10 +24,10 @@ function TooltipLabel({ machine, telemetrySnapshot }: MachineTileProps): JSX.Ele
   return (
     <Box>
       <Text fontWeight="bold">{machine.name}</Text>
-      <Text>Temperature: {temperature}&deg;C</Text>
-      <Text>Vibration: {vibration}</Text>
-      <Text>Throughput: {throughput}</Text>
-      <Text>Power draw: {powerDraw}W</Text>
+      <Text>Temperature: {temperature.toFixed(1)}&deg;C</Text>
+      <Text>Vibration: {vibration.toFixed(2)}</Text>
+      <Text>Throughput: {Math.round(throughput)}</Text>
+      <Text>Power draw: {powerDraw.toFixed(1)} kW</Text>
       <Text fontSize="xs" color="gray.300">
         Updated {formatTimestamp(telemetrySnapshot.timestamp)}
       </Text>

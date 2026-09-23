@@ -14,7 +14,9 @@ import { useFactoryStatus } from "../hooks/useFactoryStatus";
 import { useZones } from "../hooks/useZones";
 import { useAllMachines } from "../hooks/useAllMachines";
 import { useActiveAlerts } from "../hooks/useActiveAlerts";
+import { useLiveFreshness } from "../hooks/useLiveFreshness";
 import type { NormalizedAlert } from "../lib/alerts";
+import type { Machine } from "../types";
 
 const HEALTH_RANK: Record<ZoneHealthCardViewModel["health"], number> = {
   faulted: 0,
@@ -55,10 +57,55 @@ function countOpenAlertsByZone(
   return counts;
 }
 
+const STATUS_ORDER: Machine["status"][] = ["running", "error", "maintenance", "idle"];
+
+/** "10 running · 2 error · 1 maintenance · 1 idle", skipping zero counts. */
+function summarizeMachineStatus(machines: Machine[]): string {
+  const counts = new Map<Machine["status"], number>();
+  for (const m of machines) counts.set(m.status, (counts.get(m.status) ?? 0) + 1);
+  return STATUS_ORDER.filter((s) => counts.get(s))
+    .map((s) => `${counts.get(s)} ${s}`)
+    .join(" · ");
+}
+
+/**
+ * Connection = REST says connected AND the WebSocket feed is fresh. Its own
+ * component so the 1s freshness tick re-renders this tile, not the page.
+ */
+function ConnectionStatTile({
+  apiConnected,
+  isLoading,
+}: {
+  apiConnected: boolean | undefined;
+  isLoading: boolean;
+}) {
+  const { state, secondsAgo } = useLiveFreshness();
+
+  const [label, colorScheme] = !apiConnected
+    ? ["Disconnected", "red"]
+    : state === "live"
+      ? ["Live", "green"]
+      : state === "stale"
+        ? ["Stale", "orange"]
+        : ["Connecting", "gray"];
+
+  return (
+    <StatTile
+      label="Connection"
+      value={label}
+      badge={label}
+      colorScheme={colorScheme}
+      helpText={secondsAgo === null ? "Waiting for live data" : `Last update ${secondsAgo}s ago`}
+      isLoading={isLoading}
+    />
+  );
+}
+
 export function Dashboard() {
   const { data: status, isLoading: statusLoading, isError: statusError } = useFactoryStatus();
   const { data: zones, isLoading: zonesLoading, isError: zonesError } = useZones();
-  useAllMachines(); // wired in defensively per spec; its error must not blank the page
+  // Its error must not blank the page — tiles fall back to the zone/status API values.
+  const { machines } = useAllMachines();
   const { alerts, isLoading: alertsLoading } = useActiveAlerts(); // UNFILTERED — single call
 
   const zoneAlertCounts = useMemo(() => countOpenAlertsByZone(alerts ?? []), [alerts]);
@@ -74,18 +121,27 @@ export function Dashboard() {
     return { critical, warning };
   }, [alerts]);
 
+  // zones.json's machineCount has drifted from reality (Painting says 4, has 3),
+  // so count real machines once they've loaded — same source Topology uses.
+  const machineCountByZone = useMemo(() => {
+    if (!machines) return null;
+    const counts = new Map<string, number>();
+    for (const m of machines) counts.set(m.zoneId, (counts.get(m.zoneId) ?? 0) + 1);
+    return counts;
+  }, [machines]);
+
   const zoneViewModels = useMemo(() => {
     if (!zones) return [];
     const withCounts: ZoneHealthCardViewModel[] = zones.map((z) => ({
       zoneId: z.id,
       zoneName: z.name,
       health: z.health,
-      machineCount: z.machineCount,
+      machineCount: machineCountByZone ? machineCountByZone.get(z.id) ?? 0 : z.machineCount,
       criticalCount: zoneAlertCounts.get(z.id)?.critical ?? 0,
       warningCount: zoneAlertCounts.get(z.id)?.warning ?? 0,
     }));
     return sortZoneHealth(withCounts);
-  }, [zones, zoneAlertCounts]);
+  }, [zones, zoneAlertCounts, machineCountByZone]);
 
   const zoneGridLoading = zonesLoading || alertsLoading;
 
@@ -99,16 +155,11 @@ export function Dashboard() {
           </ChakraAlert>
         ) : (
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={4}>
-            <StatTile
-              label="Connection"
-              value={statusLoading ? "" : status?.connected ? "Live" : "Disconnected"}
-              badge={statusLoading ? undefined : status?.connected ? "Live" : "Disconnected"}
-              colorScheme={status?.connected ? "green" : "red"}
-              isLoading={statusLoading}
-            />
+            <ConnectionStatTile apiConnected={status?.connected} isLoading={statusLoading} />
             <StatTile
               label="Machines"
-              value={status?.totalMachines ?? ""}
+              value={machines?.length ?? status?.totalMachines ?? ""}
+              helpText={machines ? summarizeMachineStatus(machines) : undefined}
               isLoading={statusLoading}
             />
             <StatTile label="Zones" value={status?.zoneCount ?? ""} isLoading={statusLoading} />

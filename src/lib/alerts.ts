@@ -216,6 +216,8 @@ export function groupByMachine(alerts: NormalizedAlert[]): MachineAlertGroup[] {
  * (rather than a full NormalizedAlert) can still call this safely.
  * A timestamp in the future (clock skew, unlikely with this mock) is
  * clamped to "0s ago" rather than showing a negative duration.
+ * Rolls over s → m → h → d; anything a week or older shows as an absolute
+ * date ("Sep 14, 2025"), since "8950h ago" tells an operator nothing.
  */
 export function formatRelativeTime(iso: string): string {
   const ms = parseValidTimestampMs(iso);
@@ -229,5 +231,14 @@ export function formatRelativeTime(iso: string): string {
   if (diffMin < 60) return `${diffMin}m ago`;
 
   const diffHour = Math.floor(diffMin / 60);
-  return `${diffHour}h ago`;
+  if (diffHour < 24) return `${diffHour}h ago`;
+
+  const diffDay = Math.floor(diffHour / 24);
+  if (diffDay < 7) return `${diffDay}d ago`;
+
+  return new Date(ms).toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
 }

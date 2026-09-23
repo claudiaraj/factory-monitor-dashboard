@@ -6,6 +6,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { Alerts } from "./pages/Alerts";
 import { Topology } from "./pages/Topology";
 import { LiveProvider } from "./live/LiveProvider";
+import { LiveIndicator } from "./components/LiveIndicator";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,7 +21,10 @@ function NavBar() {
   return (
     <Box bg="gray.800" color="white" px={6} py={3}>
       <Flex justify="space-between" align="center">
-        <Heading size="md">Factory Monitor</Heading>
+        <HStack spacing={6}>
+          <Heading size="md">Factory Monitor</Heading>
+          <LiveIndicator />
+        </HStack>
         <HStack spacing={4}>
           <Button as={Link} to="/" variant="ghost" colorScheme="whiteAlpha" size="sm">
             Dashboard

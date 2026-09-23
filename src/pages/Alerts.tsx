@@ -51,15 +51,16 @@ export function Alerts(): JSX.Element {
   // get an accurate success/error toast instead of guessing from the global `acknowledgePending`
   // boolean. No change to Story 4's approved contract was needed.
 
-  // Chip counts: zone-filtered, but NOT severity/ack/search-filtered — so clicking a chip is meaningful.
-  const severityCounts: SeverityCounts = useMemo(
-    () => ({
-      critical: zoneAlerts.filter((a) => a.severity === "critical").length,
-      warning: zoneAlerts.filter((a) => a.severity === "warning").length,
-      info: zoneAlerts.filter((a) => a.severity === "info").length,
-    }),
-    [zoneAlerts]
-  );
+  // Chip counts: zone- and ack-toggle-filtered (so a chip never counts alerts the list is hiding),
+  // but NOT severity/search-filtered — so clicking a chip is meaningful.
+  const severityCounts: SeverityCounts = useMemo(() => {
+    const counted = showAcknowledged ? zoneAlerts : zoneAlerts.filter((a) => !a.acknowledged);
+    return {
+      critical: counted.filter((a) => a.severity === "critical").length,
+      warning: counted.filter((a) => a.severity === "warning").length,
+      info: counted.filter((a) => a.severity === "info").length,
+    };
+  }, [zoneAlerts, showAcknowledged]);
 
   const severityFiltered = useMemo(
     () => (severityFilter ? zoneAlerts.filter((a) => a.severity === severityFilter) : zoneAlerts),
@@ -220,6 +221,7 @@ export function Alerts(): JSX.Element {
                 onAcknowledgeAll={(ids) => handleAcknowledgeGroup(group.machineId, ids)}
                 pendingAckId={pendingAckId}
                 bulkAckPending={bulkAckGroupId === group.machineId}
+                defaultExpanded={group.worstSeverity === "critical"}
               />
             ))}
           </VStack>

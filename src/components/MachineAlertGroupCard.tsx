@@ -9,7 +9,7 @@ export interface MachineAlertGroupCardProps {
   onAcknowledgeAll: (ids: string[]) => void; // parent owns the bulkAcknowledge call + summary toast
   pendingAckId: string | null; // id of the single-row ack currently in flight, or null
   bulkAckPending: boolean; // true while THIS group's "Acknowledge all" is in flight
-  defaultExpanded?: boolean; // default false — group detail starts collapsed
+  defaultExpanded?: boolean; // default false — group detail starts collapsed (Alerts page expands critical groups)
 }
 
 export function MachineAlertGroupCard({

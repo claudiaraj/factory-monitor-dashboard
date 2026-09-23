@@ -13,5 +13,8 @@ export function useAlerts(filters?: { severity?: string; zone?: string }) {
       if (!response.ok) throw new Error("Failed to fetch alerts");
       return response.json();
     },
+    // Backstop for the WebSocket: picks up server-side changes the feed never
+    // pushes (e.g. window.__setAlertScenario) without a manual refresh.
+    refetchInterval: 15000,
   });
 }
