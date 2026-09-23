@@ -8,7 +8,7 @@
     "user_stories": "completed",
     "acceptance_checklist": "completed",
     "code_spec": "completed",
-    "implementation": "in_progress",
+    "implementation": "completed",
     "verification": "not_started",
     "integration": "not_started",
     "acceptance": "not_started"
@@ -74,7 +74,7 @@
     },
     "story-5-dashboard-page": {
       "title": "Dashboard Page & Components",
-      "status": "implementation",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-5-dashboard-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -86,7 +86,7 @@
     },
     "story-6-alerts-page": {
       "title": "Alerts Page & Components (built for high alert volume)",
-      "status": "implementation",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-6-alerts-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -98,7 +98,7 @@
     },
     "story-7-topology-page": {
       "title": "Factory Topology Page (stretch)",
-      "status": "implementation",
+      "status": "implementation_complete",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-7-topology-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -135,6 +135,19 @@
           "story-4-active-alerts-hook": "implementation_complete"
         }
       }
+      },
+      {
+        "batch_number": 3,
+        "stories": ["story-5-dashboard-page", "story-6-alerts-page", "story-7-topology-page"],
+        "status": "completed",
+        "started_at": "2026-09-23T19:35:00Z",
+        "completed_at": "2026-09-23T20:05:00Z",
+        "results": {
+          "story-5-dashboard-page": "implementation_complete",
+          "story-6-alerts-page": "implementation_complete",
+          "story-7-topology-page": "implementation_complete"
+        }
+      }
     ],
     "current_batch": null
   },
@@ -162,5 +175,5 @@
       "note": "Handed off from @monkeyplan. PRT + epic breakdown are pre-approved; Phase 1 design and Phase 2 stories should build on them, not re-derive requirements from scratch."
     }
   },
-  "last_updated": "2026-09-23T18:45:00Z"
+  "last_updated": "2026-09-23T20:05:00Z"
 }
