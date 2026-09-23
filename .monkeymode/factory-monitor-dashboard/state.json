@@ -1,6 +1,6 @@
 {
   "feature_name": "factory-monitor-dashboard",
-  "current_phase": "6",
+  "current_phase": "completed",
   "phase_status": {
     "design_1a": "completed",
     "design_1b": "completed",
@@ -11,7 +11,7 @@
     "implementation": "completed",
     "verification": "completed",
     "integration": "completed",
-    "acceptance": "not_started"
+    "acceptance": "completed"
   },
   "artifacts": {
     "design_docs": {
@@ -26,7 +26,7 @@
   "stories": {
     "story-1-status-alert-utilities": {
       "title": "Shared Status & Alert Normalization Utilities",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-1-status-alert-utilities-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -48,7 +48,7 @@
     },
     "story-2-all-machines-hook": {
       "title": "All-Machines Aggregation Hook",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-2-all-machines-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -69,7 +69,7 @@
     },
     "story-3-live-data-provider": {
       "title": "Live Data Provider",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-3-live-data-provider-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -93,7 +93,7 @@
     },
     "story-4-active-alerts-hook": {
       "title": "Active Alerts Aggregation Hook",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-4-active-alerts-hook-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -114,7 +114,7 @@
     },
     "story-5-dashboard-page": {
       "title": "Dashboard Page & Components",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-5-dashboard-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -139,7 +139,7 @@
     },
     "story-6-alerts-page": {
       "title": "Alerts Page & Components (built for high alert volume)",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-6-alerts-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -165,7 +165,7 @@
     },
     "story-7-topology-page": {
       "title": "Factory Topology Page (stretch)",
-      "status": "integrated",
+      "status": "completed",
       "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-7-topology-page-spec.md",
       "assigned_to": null,
       "current_task": null,
@@ -247,13 +247,18 @@
     "completed_at": "2026-09-23T20:45:00Z"
   },
   "acceptance": {
-    "status": "not_started",
-    "automated_passed": 0,
+    "status": "completed",
+    "automated_passed": 20,
     "automated_failed": 0,
     "human_passed": 0,
     "human_failed": 0,
-    "known_issues": [],
-    "completed_at": null
+    "known_issues": [
+      "zones.json machineCount (4) for Painting & Coating doesn't match the 3 machines actually in machines.json for that zone -- Dashboard (trusts zones.json per PRT Q1) and Topology (counts real machines) show different numbers for the same zone",
+      "formatRelativeTime (src/lib/alerts.ts) has no day/week granularity -- caps out at 'Nh ago', cosmetic only",
+      "Scenario switches (window.__setAlertScenario) don't survive a hard browser reload (F5) -- expected, matches the mock's documented no-persistence-across-reload limitation (PRT Q2)"
+    ],
+    "note": "All 20 items of stories/2b-acceptance.md (AC-001 through AC-020) were run live via Playwright against npm run dev in Phase 5 on 2026-09-23T20:35:00Z, with 20/20 PASS. User confirmed reusing that run as the Phase 7 acceptance result rather than re-running, since nothing in src/ changed afterward.",
+    "completed_at": "2026-09-23T20:55:00Z"
   },
   "context": {
     "save_qa_log": true,
@@ -263,5 +268,5 @@
       "note": "Handed off from @monkeyplan. PRT + epic breakdown are pre-approved; Phase 1 design and Phase 2 stories should build on them, not re-derive requirements from scratch."
     }
   },
-  "last_updated": "2026-09-23T20:45:00Z"
+  "last_updated": "2026-09-23T20:55:00Z"
 }
