@@ -1,0 +1,67 @@
+{
+  "feature_name": "factory-monitor-dashboard",
+  "current_phase": "completed",
+  "phase_status": {
+    "intake": "skipped",
+    "prt_draft": "completed",
+    "prt_review": "completed",
+    "ux_ideation": "completed",
+    "epic_breakdown": "completed",
+    "tracker_upload": "skipped"
+  },
+  "intake": {
+    "entry_point": "direct",
+    "status": "completed",
+    "scope_type": "new_feature",
+    "problem_statement": "Factory floor monitoring dashboard for a 90-minute live coding interview. See PROBLEM-STATEMENT.md at the repo root.",
+    "users": ["Floor Operator", "Shift Supervisor"],
+    "stakeholders": ["Interview panel (Engineering + Product Manager)"],
+    "business_goals": [
+      "Operator can identify the highest-severity open problem within 5 seconds of landing",
+      "Acknowledging a problem takes one click",
+      "New critical alerts are visible without a manual refresh"
+    ],
+    "in_scope": [
+      "Factory overview KPIs and connection state",
+      "Active alerts list with severity/location filters and acknowledge",
+      "Alert-volume handling (severity chips, grouping by machine, bulk acknowledge) per PM guidance: ~20 alerts/day typical, 50+ on a bad day",
+      "Zone health ranked by attention needed",
+      "Live alert/telemetry updates over the provided mock WebSocket",
+      "Factory topology view (stretch)"
+    ],
+    "out_of_scope": [
+      "Auth/roles",
+      "Changes to the real backend or MSW mocks",
+      "Historical telemetry charts",
+      "Alert assignment/escalation",
+      "Mobile layouts",
+      "Persisting acknowledgements across reload",
+      "Automated tests (no test runner installed)"
+    ],
+    "additional_context": "Direct input from the PM during planning: 'NO OF ALERTS avg would be around 20 and bad day around 50+, best way to handle that smartly is the only addition.' This drove FR-019 through FR-024 (severity chips, grouping by machine, bulk acknowledge, info collapse, stable live-update ordering, search).",
+    "source_document": "/Users/sailesh/Downloads/factory-monitor/PROBLEM-STATEMENT.md",
+    "gaps_identified": [],
+    "completed_at": "2026-09-23T17:51:52Z"
+  },
+  "artifacts": {
+    "prt": ".monkeyplan/factory-monitor-dashboard/prt.md",
+    "ux_ideation": ".monkeyplan/factory-monitor-dashboard/ux-ideation.md",
+    "epic_breakdown": ".monkeyplan/factory-monitor-dashboard/epic-breakdown.md",
+    "qa_log": null
+  },
+  "context": {
+    "save_qa_log": false,
+    "ui_facing": true,
+    "framework": "react",
+    "generate_epics": true,
+    "tracker": null,
+    "tracker_upload": "skipped"
+  },
+  "rework_history": [],
+  "monkeymode_handoff": {
+    "offered": true,
+    "accepted": true,
+    "monkeymode_path": ".monkeymode/factory-monitor-dashboard/"
+  },
+  "last_updated": "2026-09-23T17:51:52Z"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "assembly",
+    "name": "Assembly Line",
+    "machineCount": 4,
+    "health": "healthy"
+  },
+  {
+    "id": "welding",
+    "name": "Welding Bay",
+    "machineCount": 3,
+    "health": "degraded"
+  },
+  {
+    "id": "painting",
+    "name": "Painting & Coating",
+    "machineCount": 4,
+    "health": "healthy"
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging & Shipping",
+    "machineCount": 4,
+    "health": "faulted"
+  }
+]

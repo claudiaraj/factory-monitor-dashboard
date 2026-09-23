@@ -1,0 +1,162 @@
+[
+  {
+    "id": "evt-001",
+    "machineId": "press-01",
+    "machineName": "Box Press #1",
+    "type": "alert_raised",
+    "message": "Critical alert: Hydraulic pressure exceeded safe limit",
+    "timestamp": "2025-09-14T10:25:00Z"
+  },
+  {
+    "id": "evt-002",
+    "machineId": "welder-02",
+    "machineName": "Spot Welder #2",
+    "type": "alert_raised",
+    "message": "Critical alert: Overheating detected — temperature above 90°C",
+    "timestamp": "2025-09-14T10:28:00Z"
+  },
+  {
+    "id": "evt-003",
+    "machineId": "welder-02",
+    "machineName": "Spot Welder #2",
+    "type": "machine_stopped",
+    "message": "Machine stopped due to overheating fault",
+    "timestamp": "2025-09-14T10:28:30Z"
+  },
+  {
+    "id": "evt-004",
+    "machineId": "spray-02",
+    "machineName": "Spray Booth #2",
+    "type": "machine_stopped",
+    "message": "Machine entered idle state — no jobs in queue",
+    "timestamp": "2025-09-14T10:15:00Z"
+  },
+  {
+    "id": "evt-005",
+    "machineId": "welder-01",
+    "machineName": "Arc Welder #1",
+    "type": "alert_raised",
+    "message": "Warning: Vibration levels trending above normal",
+    "timestamp": "2025-09-14T10:15:00Z"
+  },
+  {
+    "id": "evt-006",
+    "machineId": "conveyor-04",
+    "machineName": "Shipping Conveyor",
+    "type": "maintenance_scheduled",
+    "message": "Maintenance window scheduled for 11:00 UTC",
+    "timestamp": "2025-09-14T09:00:00Z"
+  },
+  {
+    "id": "evt-007",
+    "machineId": "conveyor-04",
+    "machineName": "Shipping Conveyor",
+    "type": "machine_stopped",
+    "message": "Machine taken offline for scheduled maintenance",
+    "timestamp": "2025-09-14T09:00:00Z"
+  },
+  {
+    "id": "evt-008",
+    "machineId": "welder-02",
+    "machineName": "Spot Welder #2",
+    "type": "alert_raised",
+    "message": "Warning: Electrode wear exceeding threshold",
+    "timestamp": "2025-09-14T09:12:00Z"
+  },
+  {
+    "id": "evt-009",
+    "machineId": "cnc-mill-01",
+    "machineName": "CNC Mill #1",
+    "type": "machine_started",
+    "message": "Machine started — production run #4821 beginning",
+    "timestamp": "2025-09-14T08:00:00Z"
+  },
+  {
+    "id": "evt-010",
+    "machineId": "cnc-mill-02",
+    "machineName": "CNC Mill #2",
+    "type": "machine_started",
+    "message": "Machine started — production run #4822 beginning",
+    "timestamp": "2025-09-14T08:05:00Z"
+  },
+  {
+    "id": "evt-011",
+    "machineId": "robot-arm-01",
+    "machineName": "Robotic Arm A1",
+    "type": "machine_started",
+    "message": "Machine started — assembly sequence initialized",
+    "timestamp": "2025-09-14T08:02:00Z"
+  },
+  {
+    "id": "evt-012",
+    "machineId": "conveyor-01",
+    "machineName": "Main Conveyor Belt",
+    "type": "machine_started",
+    "message": "Conveyor started at normal speed",
+    "timestamp": "2025-09-14T07:55:00Z"
+  },
+  {
+    "id": "evt-013",
+    "machineId": "welder-01",
+    "machineName": "Arc Welder #1",
+    "type": "machine_started",
+    "message": "Machine started — welding program W-109 loaded",
+    "timestamp": "2025-09-14T08:10:00Z"
+  },
+  {
+    "id": "evt-014",
+    "machineId": "welder-02",
+    "machineName": "Spot Welder #2",
+    "type": "machine_started",
+    "message": "Machine started — spot welding sequence active",
+    "timestamp": "2025-09-14T08:12:00Z"
+  },
+  {
+    "id": "evt-015",
+    "machineId": "spray-01",
+    "machineName": "Spray Booth #1",
+    "type": "machine_started",
+    "message": "Spray booth activated — ventilation at 100%",
+    "timestamp": "2025-09-14T08:30:00Z"
+  },
+  {
+    "id": "evt-016",
+    "machineId": "cnc-mill-01",
+    "machineName": "CNC Mill #1",
+    "type": "alert_raised",
+    "message": "Info: Spindle calibration due in 50 hours",
+    "timestamp": "2025-09-14T08:30:00Z"
+  },
+  {
+    "id": "evt-017",
+    "machineId": "press-01",
+    "machineName": "Box Press #1",
+    "type": "machine_started",
+    "message": "Machine started — box forming program loaded",
+    "timestamp": "2025-09-14T08:20:00Z"
+  },
+  {
+    "id": "evt-018",
+    "machineId": "robot-arm-03",
+    "machineName": "Packing Robot C1",
+    "type": "machine_started",
+    "message": "Packing robot initialized — pick-and-place mode",
+    "timestamp": "2025-09-14T08:25:00Z"
+  },
+  {
+    "id": "evt-019",
+    "machineId": "conveyor-03",
+    "machineName": "Packaging Conveyor",
+    "type": "machine_started",
+    "message": "Conveyor started at normal speed",
+    "timestamp": "2025-09-14T07:58:00Z"
+  },
+  {
+    "id": "evt-020",
+    "machineId": "press-01",
+    "machineName": "Box Press #1",
+    "type": "machine_stopped",
+    "message": "Machine halted — critical hydraulic pressure fault",
+    "timestamp": "2025-09-14T10:25:05Z"
+  }
+]

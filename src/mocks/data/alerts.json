@@ -1,0 +1,68 @@
+[
+  {
+    "id": "alt-001",
+    "machineId": "press-01",
+    "machineName": "Box Press #1",
+    "zoneId": "packaging",
+    "zoneName": "Packaging & Shipping",
+    "severity": "critical",
+    "message": "Hydraulic pressure exceeded safe limit — machine halted",
+    "timestamp": "2025-09-14T10:25:00Z",
+    "acknowledged": false
+  },
+  {
+    "id": "alt-002",
+    "machineId": "welder-02",
+    "machineName": "Spot Welder #2",
+    "zoneId": "welding",
+    "zoneName": "Welding Bay",
+    "severity": "critical",
+    "message": "Temperature sensor reading above 90°C — overheating detected",
+    "timestamp": "2025-09-14T10:28:00Z",
+    "acknowledged": false
+  },
+  {
+    "id": "alt-003",
+    "machineId": "welder-01",
+    "machineName": "Arc Welder #1",
+    "zoneId": "welding",
+    "zoneName": "Welding Bay",
+    "severity": "warning",
+    "message": "Vibration levels trending above normal range",
+    "timestamp": "2025-09-14T10:15:00Z",
+    "acknowledged": false
+  },
+  {
+    "id": "alt-004",
+    "machineId": "welder-02",
+    "machine_name": "Spot Welder #2",
+    "zoneId": "welding",
+    "zoneName": "Welding Bay",
+    "severity": "warning",
+    "message": "Electrode wear exceeding threshold — schedule replacement",
+    "timestamp": "2025-09-14T09:12:00Z",
+    "acknowledged": false
+  },
+  {
+    "id": "alt-005",
+    "machineId": "conveyor-04",
+    "machineName": "Shipping Conveyor",
+    "zoneId": "packaging",
+    "zoneName": "Packaging & Shipping",
+    "severity": "info",
+    "message": "Scheduled maintenance window begins in 2 hours",
+    "timestamp": "1969-12-31T23:59:59Z",
+    "acknowledged": true
+  },
+  {
+    "id": "alt-006",
+    "machineId": "cnc-mill-01",
+    "machineName": "CNC Mill #1",
+    "zoneId": "assembly",
+    "zoneName": "Welding Bay",
+    "severity": "info",
+    "message": "Spindle calibration due in 50 operating hours",
+    "timestamp": "2025-09-14T08:30:00Z",
+    "acknowledged": false
+  }
+]

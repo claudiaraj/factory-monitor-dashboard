@@ -1,0 +1,143 @@
+{
+  "feature_name": "factory-monitor-dashboard",
+  "current_phase": "4",
+  "phase_status": {
+    "design_1a": "completed",
+    "design_1b": "completed",
+    "design_1c": "completed",
+    "user_stories": "completed",
+    "acceptance_checklist": "completed",
+    "code_spec": "completed",
+    "implementation": "in_progress",
+    "verification": "not_started",
+    "integration": "not_started",
+    "acceptance": "not_started"
+  },
+  "artifacts": {
+    "design_docs": {
+      "1a_discovery": ".monkeymode/factory-monitor-dashboard/design/1a-discovery.md",
+      "1b_contracts": ".monkeymode/factory-monitor-dashboard/design/1b-contracts.md",
+      "1c_operations": ".monkeymode/factory-monitor-dashboard/design/1c-operations.md"
+    },
+    "user_stories_doc": ".monkeymode/factory-monitor-dashboard/stories/user_stories.md",
+    "acceptance_checklist": ".monkeymode/factory-monitor-dashboard/stories/2b-acceptance.md",
+    "qa_log": ".monkeymode/factory-monitor-dashboard/qa-log.md"
+  },
+  "stories": {
+    "story-1-status-alert-utilities": {
+      "title": "Shared Status & Alert Normalization Utilities",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-1-status-alert-utilities-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/lib/status.ts", "src/lib/alerts.ts"],
+      "files_to_modify": [],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-2-all-machines-hook": {
+      "title": "All-Machines Aggregation Hook",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-2-all-machines-hook-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/hooks/useAllMachines.ts"],
+      "files_to_modify": [],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-3-live-data-provider": {
+      "title": "Live Data Provider",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-3-live-data-provider-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/live/LiveProvider.tsx", "src/hooks/useLive.ts"],
+      "files_to_modify": ["src/App.tsx"],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-4-active-alerts-hook": {
+      "title": "Active Alerts Aggregation Hook",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-4-active-alerts-hook-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/hooks/useActiveAlerts.ts"],
+      "files_to_modify": [],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-5-dashboard-page": {
+      "title": "Dashboard Page & Components",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-5-dashboard-page-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/components/StatTile.tsx", "src/components/AttentionBanner.tsx", "src/components/ZoneHealthCard.tsx"],
+      "files_to_modify": ["src/pages/Dashboard.tsx"],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-6-alerts-page": {
+      "title": "Alerts Page & Components (built for high alert volume)",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-6-alerts-page-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": ["src/components/SeverityChips.tsx", "src/components/AlertsFilterBar.tsx", "src/components/MachineAlertGroupCard.tsx", "src/components/AlertsTable.tsx"],
+      "files_to_modify": ["src/pages/Alerts.tsx"],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    },
+    "story-7-topology-page": {
+      "title": "Factory Topology Page (stretch)",
+      "status": "code_spec",
+      "code_spec_path": ".monkeymode/factory-monitor-dashboard/code_specs/story-7-topology-page-spec.md",
+      "assigned_to": null,
+      "current_task": null,
+      "files_to_create": [],
+      "files_to_modify": ["src/pages/Topology.tsx"],
+      "blocked_by_rework": null,
+      "verification": { "result": "pending", "rework_attempts": 0, "rework_summary": null, "escalated_issues": [], "last_checked_at": null, "test_corrections": [] },
+      "last_updated": "2026-09-23T18:20:00Z"
+    }
+  },
+  "parallel_execution": {
+    "enabled": false,
+    "max_concurrent": 10,
+    "batches": [],
+    "current_batch": null
+  },
+  "rework_history": [],
+  "integration": {
+    "status": "not_started",
+    "shared_files_merged": [],
+    "integration_tests_added": 0,
+    "completed_at": null
+  },
+  "acceptance": {
+    "status": "not_started",
+    "automated_passed": 0,
+    "automated_failed": 0,
+    "human_passed": 0,
+    "human_failed": 0,
+    "known_issues": [],
+    "completed_at": null
+  },
+  "context": {
+    "save_qa_log": true,
+    "monkeyplan_handoff": {
+      "prt": ".monkeymode/factory-monitor-dashboard/prt.md",
+      "epic_breakdown": ".monkeymode/factory-monitor-dashboard/epic-breakdown.md",
+      "note": "Handed off from @monkeyplan. PRT + epic breakdown are pre-approved; Phase 1 design and Phase 2 stories should build on them, not re-derive requirements from scratch."
+    }
+  },
+  "last_updated": "2026-09-23T18:45:00Z"
+}

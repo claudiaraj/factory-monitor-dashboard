@@ -1,0 +1,128 @@
+[
+  {
+    "id": "cnc-mill-01",
+    "name": "CNC Mill #1",
+    "type": "cnc_mill",
+    "zoneId": "assembly",
+    "status": "running",
+    "telemetry": { "temperature": 62.3, "vibration": 2.1, "throughput": 45, "powerDraw": 12.5 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "cnc-mill-02",
+    "name": "CNC Mill #2",
+    "type": "cnc_mill",
+    "zoneId": "assembly",
+    "status": "running",
+    "telemetry": { "temperature": 58.7, "vibration": 1.8, "throughput": 42, "powerDraw": 11.2 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "robot-arm-01",
+    "name": "Robotic Arm A1",
+    "type": "robotic_arm",
+    "zoneId": "assembly",
+    "status": "running",
+    "telemetry": { "temperature": 45.1, "vibration": 0.5, "throughput": 120, "powerDraw": 8.3 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "conveyor-01",
+    "name": "Main Conveyor Belt",
+    "type": "conveyor",
+    "zoneId": "assembly",
+    "status": "running",
+    "telemetry": { "temperature": 38.2, "vibration": 1.2, "throughput": 200, "powerDraw": 5.1 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "welder-01",
+    "name": "Arc Welder #1",
+    "type": "welder",
+    "zoneId": "welding",
+    "status": "running",
+    "telemetry": { "temperature": 85.4, "vibration": 3.2, "throughput": 30, "powerDraw": 22.0 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "welder-02",
+    "name": "Spot Welder #2",
+    "type": "welder",
+    "zoneId": "welding",
+    "status": "error",
+    "telemetry": { "temperature": 92.1, "vibration": 5.8, "throughput": 0, "powerDraw": 25.3 },
+    "lastUpdated": "2025-09-14T10:28:00Z"
+  },
+  {
+    "id": "robot-arm-02",
+    "name": "Welding Robot B1",
+    "type": "robotic_arm",
+    "zoneId": "welding",
+    "status": "running",
+    "telemetry": { "temperature": 55.0, "vibration": 1.1, "throughput": 28, "powerDraw": 9.7 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "spray-01",
+    "name": "Spray Booth #1",
+    "type": "spray_booth",
+    "zoneId": "painting",
+    "status": "running",
+    "telemetry": { "temperature": 24.5, "vibration": 0.3, "throughput": 15, "powerDraw": 6.8 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "spray-02",
+    "name": "Spray Booth #2",
+    "type": "spray_booth",
+    "zoneId": "painting",
+    "status": "idle",
+    "telemetry": { "temperature": 22.0, "vibration": 0.0, "throughput": 0, "powerDraw": 0.5 },
+    "lastUpdated": "2025-09-14T10:15:00Z"
+  },
+  {
+    "id": "conveyor-02",
+    "name": "Paint Line Conveyor",
+    "type": "conveyor",
+    "zoneId": "painting",
+    "status": "running",
+    "telemetry": { "temperature": 35.8, "vibration": 0.9, "throughput": 60, "powerDraw": 4.2 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "press-01",
+    "name": "Box Press #1",
+    "type": "press",
+    "zoneId": "packaging",
+    "status": "error",
+    "telemetry": { "temperature": 78.9, "vibration": 6.2, "throughput": 0, "powerDraw": 18.1 },
+    "lastUpdated": "2025-09-14T10:25:00Z"
+  },
+  {
+    "id": "conveyor-03",
+    "name": "Packaging Conveyor",
+    "type": "conveyor",
+    "zoneId": "packaging",
+    "status": "running",
+    "telemetry": { "temperature": 36.1, "vibration": 1.0, "throughput": 150, "powerDraw": 4.8 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "robot-arm-03",
+    "name": "Packing Robot C1",
+    "type": "robotic_arm",
+    "zoneId": "packaging",
+    "status": "running",
+    "telemetry": { "temperature": 42.3, "vibration": 0.7, "throughput": 90, "powerDraw": 7.5 },
+    "lastUpdated": "2025-09-14T10:30:00Z"
+  },
+  {
+    "id": "conveyor-04",
+    "name": "Shipping Conveyor",
+    "type": "conveyor",
+    "zoneId": "packaging",
+    "status": "maintenance",
+    "telemetry": { "temperature": 25.0, "vibration": 0.0, "throughput": 0, "powerDraw": 0.2 },
+    "lastUpdated": "2025-09-14T09:00:00Z"
+  }
+]
